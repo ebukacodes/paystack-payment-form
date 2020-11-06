@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Our Payment Page</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="pay.css">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    
+  </head>
+
+  <body>
+    <div class="paystack-color-bar"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 offset-md-4">
+          <div class="header">
+            <div class="page-info">
+              <h3 id="page-name" class="page-name">
+                 Service Payment
+              </h3>
+              <p class="company-name">
+                BY <span id="company-name">Your Company name</span>
+              </p>
+            </div>
+            <div class="page-description">
+              <span id="page-description"
+                >Payment page for services rendered</span
+              >
+            </div>
+          </div>
+          <form id="paymentForm" class="payment-form">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="element-label"><span>First Name</span></div>
+                  <input type="text" id="first-name" class="form-control" />
+                </div>
+                <div class="col-md-6">
+                  <div class="element-label"><span>Last Name</span></div>
+                  <input type="text" id="last-name" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="element-label"><span>Email</span></div>
+              <input type="text" id="email-address" class="form-control" />
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="element-label"><span>Currency</span></div>
+                  <select class="form-control" disabled="true">
+                    <option value="NGN">NGN</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <div class="element-label"><span>Amount to charge</span></div>
+                  <input
+                    type="text"
+                    id="amountv"
+                    onkeypress="return isNumber(event)"
+                    class="form-control"
+                  />
+                  <input type="hidden" id="amount" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary" type="submit">Pay Now</button>
+              <div class="float-right">
+                <h6>Total</h6>
+                <h3 id="total"></h3>
+              </div>
+            </div>
+          </form>
+          <div id="paystack-footer" class="paystack-footer animated fadeIn">
+            <a target="_blank" href="https://paystack.com/what-is-paystack">
+              <img
+                alt="Paystack secured badge"
+                src="paystack.png"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://js.paystack.co/v2/popup.js"></script>
+    <script src="pay.js"></script>
+  </body>
+</html>
